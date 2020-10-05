@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+#nginx static
+  static_content:
+    container_name: static_content
+    image: nginx:alpine
+    ports:
+      - 81:80
+    volumes:
+      - ./static_content:/usr/share/nginx/html
+
+
+#nginx proxy
+  reverse_proxy:
+    container_name: reverse_proxy
+    image: nginx:alpine
+    ports:
+      - 80:80
+    volumes:
+      - ./reverse_proxy:/etc/nginx
+    depends_on: 
+      - static_content
+      - redis
+      - flask_app
+
+#flask container
+  flask_app:
+    container_name: flask_app
+    build: .
+    ports:
+      - 5000:5000
+    depends_on:
+      - redis
+
+#redis
+  redis:
+    container_name: redis
+    image: redis:alpine
+    ports:
+      - 6379:6379
