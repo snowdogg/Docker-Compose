@@ -2,6 +2,11 @@
 
 NGINX Reverse Proxy serving Flask App and Static Website created using Docker Compose
 
+## Prerequisites
+
+Download and install Docker https://docs.docker.com/get-docker/
+Download and install Docker-Compose https://docs.docker.com/compose/install/
+
 ## Installation
 
 Download from Github
