@@ -2,6 +2,8 @@
 
 NGINX Reverse Proxy serving Flask App and Static Website created using Docker Compose
 
+[![youtube tutorial link](https://img.youtube.com/vi/tYn1FFgjwm4/0.jpg)](https://www.youtube.com/watch?v=tYn1FFgjwm4)
+
 ![wireframe of resources created](/wireframe.png "wireframe of resources created")
 
 ## Prerequisites
